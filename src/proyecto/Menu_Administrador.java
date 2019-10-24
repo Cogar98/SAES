@@ -141,7 +141,7 @@ public class Menu_Administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           altaAlumnos in = new altaAlumnos();
+           Alta_Alumnos in = new Alta_Alumnos();
            in.setVisible(true);
            this.setVisible(false);
            dispose();
@@ -157,7 +157,7 @@ public class Menu_Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-           altaProfesores in = new altaProfesores();
+           Alta_Profesores in = new Alta_Profesores();
            in.setVisible(true);
            this.setVisible(false);
 

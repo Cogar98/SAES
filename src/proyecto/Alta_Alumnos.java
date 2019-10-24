@@ -10,12 +10,12 @@ import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class altaAlumnos extends javax.swing.JFrame {
+public class Alta_Alumnos extends javax.swing.JFrame {
 
     /**
      * Creates new form altaAlumnos
      */
-    public altaAlumnos() {
+    public Alta_Alumnos() {
         initComponents();
         this.setLocationRelativeTo(null);
         //Se lee la infomacion del archivo txt y se agrega a la tabla
@@ -30,7 +30,7 @@ public class altaAlumnos extends javax.swing.JFrame {
     int clic_tabla;
     public static final String ruta_txt = "mi.txt";
     public static alumno a = new alumno();
-    public static proceso rp = new proceso();
+    public static Proceso rp = new Proceso();
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -708,7 +708,7 @@ public class altaAlumnos extends javax.swing.JFrame {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new altaAlumnos().setVisible(true);
+                new Alta_Alumnos().setVisible(true);
             }
         });
     }

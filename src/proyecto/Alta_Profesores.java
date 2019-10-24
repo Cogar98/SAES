@@ -10,9 +10,9 @@ import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public final class altaProfesores extends javax.swing.JFrame {
+public final class Alta_Profesores extends javax.swing.JFrame {
 
-    public altaProfesores() {
+    public Alta_Profesores() {
         initComponents();
         this.setLocationRelativeTo(null);
         
@@ -522,7 +522,7 @@ public final class altaProfesores extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new altaProfesores().setVisible(true);
+                new Alta_Profesores().setVisible(true);
             }
         });
     }

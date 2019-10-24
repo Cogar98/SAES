@@ -7,9 +7,9 @@ import java.io.FileReader;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import static proyecto.altaAlumnos.a;
-import static proyecto.altaAlumnos.rp;
-import static proyecto.altaAlumnos.ruta_txt;
+import static proyecto.Alta_Alumnos.a;
+import static proyecto.Alta_Alumnos.rp;
+import static proyecto.Alta_Alumnos.ruta_txt;
 
 
 public class consultarAlumnos extends javax.swing.JFrame {

@@ -147,11 +147,11 @@ public class Menu1 extends javax.swing.JFrame {
     private void altybajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altybajActionPerformed
         
         if(alum.isSelected()){
-            altaAlumnos ventana1 = new altaAlumnos(); 
+            Alta_Alumnos ventana1 = new Alta_Alumnos(); 
             ventana1.setVisible(true);
             dispose();
         }else if(prof.isSelected()){
-            altaProfesores ventana2 = new altaProfesores();
+            Alta_Profesores ventana2 = new Alta_Profesores();
             ventana2.setVisible(true);
             dispose();
         }

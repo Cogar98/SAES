@@ -11,9 +11,9 @@ import javax.swing.table.DefaultTableModel;
 //import static proyecto.altaAlumnos.rp;
 //import static proyecto.altaAlumnos.a;
 //import static proyecto.altaAlumnos.rp;
-import static proyecto.altaProfesores.a;
-import static proyecto.altaProfesores.rp2;
-import static proyecto.altaProfesores.ruta_txt;
+import static proyecto.Alta_Profesores.a;
+import static proyecto.Alta_Profesores.rp2;
+import static proyecto.Alta_Profesores.ruta_txt;
 public class consultarProfesores extends javax.swing.JFrame {
 
     public consultarProfesores() {

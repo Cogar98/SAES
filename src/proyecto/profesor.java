@@ -1,7 +1,7 @@
 
 package proyecto;
 
-public class profesor extends persona {
+public class profesor extends Persona {
     int id;
     //String noMaterias;
     String materia1;

@@ -7,9 +7,9 @@ import java.io.FileReader;
 import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import static proyecto.altaProfesores.a;
-import static proyecto.altaProfesores.rp2;
-import static proyecto.altaProfesores.ruta_txt;
+import static proyecto.Alta_Profesores.a;
+import static proyecto.Alta_Profesores.rp2;
+import static proyecto.Alta_Profesores.ruta_txt;
 
 
 public class consultarMaterias extends javax.swing.JFrame {
