@@ -1,2 +1,0 @@
-1,   Prici,   50,   Masculino,   Veracruz,   Variable_compleja,   Algebra_Lineal
-2,   Obdulia,   35,   Femenino,   Tabasco,   Programacion,   Estructura_de_datos
