@@ -1,0 +1,1 @@
+4,   Christian,   19,   Masculino,   Neza,   Tele,   ecuaciones,   Ingles,   calculo,   variable_compleja,   Inglés,   C++
