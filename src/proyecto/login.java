@@ -6,6 +6,8 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 public class login extends javax.swing.JFrame {
+   int seg = 30;
+   int errores; 
     public login() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -166,8 +168,37 @@ public class login extends javax.swing.JFrame {
             dispose();//se cierra la ventana actual
         } else {
             JOptionPane.showMessageDialog(this, "Usuario o contraseña Incorrectos");
+            errores++;
         }
  
+         if (errores == 3) {
+            int contador = 30;
+            text1.setEnabled(true);
+            text2.setEnabled(true);
+            cont.setEnabled(true);
+            btnAceptar.setEnabled(false);
+            t = new Timer(1000, null);
+            t.start();
+            t.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(java.awt.event.ActionEvent evt1) {
+                    text1.setText("Por favor intentelo de nuevo en");
+                    cont.setText(seg + "");
+                    text2.setText("segundos");
+                    seg--;
+                    if (seg == -1) {
+                        btnAceptar.setEnabled(true);
+                        seg = 30;
+                        errores = 0;
+                        t.stop();
+                        text1.setText("");
+                        text2.setText("");
+                        cont.setText("");
+                        
+                    }
+                }
+            });
+        }
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed
