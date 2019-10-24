@@ -26,7 +26,7 @@ public final class Alta_Profesores extends javax.swing.JFrame {
     
     int clic_tabla;
     public static String ruta_txt = "profesores.txt";
-    public static profesor a = new profesor();
+    public static Profesor a = new Profesor();
     public static proceso2 rp2 = new proceso2();
 
     @SuppressWarnings("unchecked")
@@ -305,7 +305,7 @@ public final class Alta_Profesores extends javax.swing.JFrame {
             String linea = null;
             while ((linea = bu.readLine()) != null) {
                 StringTokenizer st = new StringTokenizer(linea, ",");
-                a = new profesor();
+                a = new Profesor();
                 a.setId(Integer.parseInt(st.nextToken()));
                 a.setNombre(st.nextToken());
                 a.setEdad(st.nextToken());
@@ -426,7 +426,7 @@ public final class Alta_Profesores extends javax.swing.JFrame {
         
         Object fila[] = new Object[dt.getColumnCount()];
         for (int i = 0; i < rp2.cantidadRegistro(); i++) {
-            a = new profesor();
+            a = new Profesor();
             a = rp2.obtenerRegistro(i);
             fila[0] = a.getId();
             fila[1] = a.getNombre();
@@ -448,7 +448,7 @@ public final class Alta_Profesores extends javax.swing.JFrame {
             } else if (leerNombre() == null) {
                 mensaje("Ingresar Nombre");
             } else {
-                a = new profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
+                a = new Profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
                 if (rp2.buscaCodigo(a.getId()) != -1) {
                     mensaje("Este codigo ya existe");
                 } else {
@@ -472,7 +472,7 @@ public final class Alta_Profesores extends javax.swing.JFrame {
                 mensaje("Ingresar Nombre");
             } else {
                 int codigo = rp2.buscaCodigo(leerCodigo());
-                a = new profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
+                a = new Profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
 
                 if (codigo == -1) {
                     rp2.agregarRegistro(a);

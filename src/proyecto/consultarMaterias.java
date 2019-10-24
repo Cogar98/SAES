@@ -196,7 +196,7 @@ public int idnt;
             String linea = null;
             while ((linea = bu.readLine()) != null) {
                 StringTokenizer st = new StringTokenizer(linea, ",");
-                a = new profesor();
+                a = new Profesor();
                 a.setId(Integer.parseInt(st.nextToken()));
                 a.setNombre(st.nextToken());
                 a.setEdad(st.nextToken());
@@ -232,7 +232,7 @@ public int idnt;
         
         Object fila[] = new Object[dt.getColumnCount()];
         for (int i = 0; i < rp2.profesores.size(); i++) {
-                a = new profesor();
+                a = new Profesor();
                 a = rp2.obtenerRegistro(i);
                 fila[0] = a.getId();
                 fila[1] = a.getNombre();

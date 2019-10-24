@@ -29,7 +29,7 @@ public class Alta_Alumnos extends javax.swing.JFrame {
     
     int clic_tabla;
     public static final String ruta_txt = "mi.txt";
-    public static alumno a = new alumno();
+    public static Alumno a = new Alumno();
     public static Proceso rp = new Proceso();
     
     @SuppressWarnings("unchecked")
@@ -426,7 +426,7 @@ public class Alta_Alumnos extends javax.swing.JFrame {
             String linea = null;
             while ((linea = bu.readLine()) != null) {
                 StringTokenizer st = new StringTokenizer(linea, ",");
-                a = new alumno();
+                a = new Alumno();
                 a.setId(Integer.parseInt(st.nextToken()));
                 a.setNombre(st.nextToken());
                 a.setEdad(st.nextToken());
@@ -632,7 +632,7 @@ public class Alta_Alumnos extends javax.swing.JFrame {
             } else if (leerNombre() == null) {
                 mensaje("Ingresar Nombre");
             } else {
-                a = new alumno(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerCarrera(), leerAsignatura()
+                a = new Alumno(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerCarrera(), leerAsignatura()
                 , leerAsignatura2(), leerAsignatura3(), leerAsignatura4(), leerAsignatura5(), leerAsignatura6());
                 if (rp.buscaCodigo(a.getId()) != -1) {
                     mensaje("Este codigo ya existe");
@@ -657,7 +657,7 @@ public class Alta_Alumnos extends javax.swing.JFrame {
                 mensaje("Ingresar Nombre");
             } else {
                 int codigo = rp.buscaCodigo(leerCodigo());
-                a = new alumno(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerCarrera(), leerAsignatura()
+                a = new Alumno(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerCarrera(), leerAsignatura()
                 , leerAsignatura2(), leerAsignatura3(), leerAsignatura4(), leerAsignatura5(), leerAsignatura6());
 
                 if (codigo == -1) {

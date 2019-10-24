@@ -5,22 +5,22 @@ import java.util.ArrayList;
 
 public class Proceso {
     
-    ArrayList <alumno> alumnos = new ArrayList();
+    ArrayList <Alumno> alumnos = new ArrayList();
  
     public Proceso(){
     }
     
-        public Proceso(ArrayList<alumno> alumnos){
+        public Proceso(ArrayList<Alumno> alumnos){
         this.alumnos = alumnos;
         
     }
         
     
-    public void agregarRegistro(alumno alumnos){
+    public void agregarRegistro(Alumno alumnos){
         this.alumnos.add(alumnos);
     }
 
-    public void modificarRegistro(int i, alumno alumnos){
+    public void modificarRegistro(int i, Alumno alumnos){
         this.alumnos.set(i, alumnos);
     }
     
@@ -28,8 +28,8 @@ public class Proceso {
         this.alumnos.remove(i);
     }
     
-    public alumno obtenerRegistro(int i){//Se obtiene la direccion
-        return (alumno)alumnos.get(i);
+    public Alumno obtenerRegistro(int i){//Se obtiene la direccion
+        return (Alumno)alumnos.get(i);
     }
     
     public int cantidadRegistro(){//Se obtiene el tamaño del arreglo de objetos
