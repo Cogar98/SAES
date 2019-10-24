@@ -209,7 +209,7 @@ public class consultarAlumnos extends javax.swing.JFrame {
             String linea = null;
             while ((linea = bu.readLine()) != null) {
                 StringTokenizer st = new StringTokenizer(linea, ",");
-                a = new alumno();
+                a = new Alumno();
                 a.setId(Integer.parseInt(st.nextToken()));
                 a.setNombre(st.nextToken());
                 a.setEdad(st.nextToken());
@@ -257,7 +257,7 @@ public class consultarAlumnos extends javax.swing.JFrame {
         Object fila[] = new Object[dt.getColumnCount()];
         //for(; i < rp.alumnos.size();i++){
             if (rp.alumnos.get(b-1).id == b) {
-                a = new alumno();
+                a = new Alumno();
                 a = rp.obtenerRegistro(b - 1);
                 fila[0] = a.getId();
                 fila[1] = a.getNombre();

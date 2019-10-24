@@ -26,8 +26,8 @@ public final class altaProfesores extends javax.swing.JFrame {
     
     int clic_tabla;
     public static String ruta_txt = "profesores.txt";
-    public static profesor a = new profesor();
-    public static proceso2 rp2 = new proceso2();
+    public static Profesor a = new Profesor();
+    public static Metodos rp2 = new Metodos();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -289,7 +289,7 @@ public final class altaProfesores extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Menu1 men = new Menu1();
+        Menu men = new Menu();
         men.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -305,7 +305,7 @@ public final class altaProfesores extends javax.swing.JFrame {
             String linea = null;
             while ((linea = bu.readLine()) != null) {
                 StringTokenizer st = new StringTokenizer(linea, ",");
-                a = new profesor();
+                a = new Profesor();
                 a.setId(Integer.parseInt(st.nextToken()));
                 a.setNombre(st.nextToken());
                 a.setEdad(st.nextToken());
@@ -426,7 +426,7 @@ public final class altaProfesores extends javax.swing.JFrame {
         
         Object fila[] = new Object[dt.getColumnCount()];
         for (int i = 0; i < rp2.cantidadRegistro(); i++) {
-            a = new profesor();
+            a = new Profesor();
             a = rp2.obtenerRegistro(i);
             fila[0] = a.getId();
             fila[1] = a.getNombre();
@@ -448,7 +448,7 @@ public final class altaProfesores extends javax.swing.JFrame {
             } else if (leerNombre() == null) {
                 mensaje("Ingresar Nombre");
             } else {
-                a = new profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
+                a = new Profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
                 if (rp2.buscaCodigo(a.getId()) != -1) {
                     mensaje("Este codigo ya existe");
                 } else {
@@ -472,7 +472,7 @@ public final class altaProfesores extends javax.swing.JFrame {
                 mensaje("Ingresar Nombre");
             } else {
                 int codigo = rp2.buscaCodigo(leerCodigo());
-                a = new profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
+                a = new Profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
 
                 if (codigo == -1) {
                     rp2.agregarRegistro(a);
