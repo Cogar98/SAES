@@ -13,7 +13,7 @@ public class imagen5 {
     
      public static void main(String[] args){
 
-     consultarMaterias abrir = new consultarMaterias();
+     Cons_Materia abrir = new Cons_Materia();
      abrir.setVisible(true);
 
 }

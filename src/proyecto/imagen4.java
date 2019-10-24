@@ -13,7 +13,7 @@ public class imagen4 {
     
      public static void main(String[] args){
 
-      consultarAlumnos abrir = new consultarAlumnos();
+      Cons_Alumno abrir = new Cons_Alumno();
       abrir.setVisible(true);
 
 }

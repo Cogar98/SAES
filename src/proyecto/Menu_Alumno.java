@@ -125,7 +125,7 @@ public class Menu_Alumno extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           consultarAlumnos in = new consultarAlumnos();
+           Cons_Alumno in = new Cons_Alumno();
            in.setVisible(true);
            this.setVisible(false);           
            dispose();
@@ -133,7 +133,7 @@ public class Menu_Alumno extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-           consultarProfesores in = new consultarProfesores();
+           Cons_Profesor in = new Cons_Profesor();
            in.setVisible(true);
            this.setVisible(false);
             dispose();          
@@ -141,7 +141,7 @@ public class Menu_Alumno extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-           consultarMaterias in = new consultarMaterias();
+           Cons_Materia in = new Cons_Materia();
            in.setVisible(true);
            this.setVisible(false);           
            dispose();
