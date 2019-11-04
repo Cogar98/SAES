@@ -1,1 +1,3 @@
-1, roberto, 15, m, m, f, m, m, m, m, m, 
+1,  roberto,  15,  m,  m,  f,  m,  m,  m,  m,  m,  
+5, d, 5, m, m, m, m, m, m, m, m, 
+2, d, 5, m, m, m, m, m, m, m, m, 

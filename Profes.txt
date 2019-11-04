@@ -1,0 +1,2 @@
+1,  prici,  50,  Masculino,  EDOMEX,  Algebra,  
+2, Galaxya, 40, femenino, CDMX, Calculo_Vectorial, 

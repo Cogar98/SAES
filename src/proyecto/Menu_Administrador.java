@@ -35,6 +35,7 @@ public class Menu_Administrador extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -54,7 +55,7 @@ public class Menu_Administrador extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 126, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 126, 130, -1));
 
         jButton2.setText("Consulta de Alumnos");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +71,7 @@ public class Menu_Administrador extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 126, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(228, 126, 150, -1));
 
         jButton4.setText("Consulta de Profesores");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -88,8 +89,11 @@ public class Menu_Administrador extends javax.swing.JFrame {
         jLabel3.setText("Seccion Profesores");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 73, -1, -1));
 
+        jButton5.setText("LISTA DE ALUMNOS");
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 130, -1));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/administrador.jpg"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 400, 300));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 470, 360));
 
         jMenu1.setText("Menu Principal");
 
@@ -202,6 +206,7 @@ public class Menu_Administrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

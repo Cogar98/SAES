@@ -1,0 +1,2 @@
+12,  a,  13,  d,  a,  a,  a,  ,  ,  ,  ,  
+6, roberto, 20, hombre, fas, telamatica, programacion, matematicas, fisica, calculo, multivariable, 

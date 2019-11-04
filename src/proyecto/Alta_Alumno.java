@@ -26,7 +26,7 @@ public class Alta_Alumno extends javax.swing.JFrame {
     }
     
     int clic_tabla;
-    public static final String ruta_txt = "mi.txt";
+    public static final String ruta_txt = "Alum.txt";
     public static Alumno a = new Alumno();
     public static Herramientas rp = new Herramientas();
     
@@ -292,6 +292,11 @@ public class Alta_Alumno extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Menu");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setText("Menu Principal");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -416,6 +421,13 @@ public class Alta_Alumno extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+           Inicio_Sesion in = new Inicio_Sesion();
+            in.setVisible(true);
+            dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu1ActionPerformed
 //metodo que carga la informacion del txt
     public void cargar_txt() {
         File ruta = new File(ruta_txt);
