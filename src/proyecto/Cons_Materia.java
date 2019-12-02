@@ -8,8 +8,8 @@ import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static proyecto.Alta_Profesor.a;
-import static proyecto.Alta_Profesor.rp2;
 import static proyecto.Alta_Profesor.ruta_txt;
+import static proyecto.Alta_Profesor.List_Profesores;
 
 
 public class Cons_Materia extends javax.swing.JFrame {
@@ -179,7 +179,7 @@ public int idnt;
                 a.setDireccion(st.nextToken());
                 a.setMateria1(st.nextToken());
                 a.setMateria2(st.nextToken());
-                rp2.agregarRegistro(a);
+                List_Profesores.agregarRegistro(a);
             }
             bu.close();
         } catch (Exception ex) {
@@ -206,9 +206,9 @@ public int idnt;
         
         
         Object fila[] = new Object[dt.getColumnCount()];
-        for (int i = 0; i < rp2.profesores.size(); i++) {
+        for (int i = 0; i < List_Profesores.profesores.size(); i++) {
                 a = new Profesor();
-                a = rp2.obtenerRegistro(i);
+                a = List_Profesores.obtenerRegistro(i);
                 fila[0] = a.getId();
                 fila[1] = a.getNombre();
                 //fila[2] = a.getEdad();

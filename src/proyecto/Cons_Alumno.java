@@ -8,8 +8,8 @@ import java.util.StringTokenizer;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static proyecto.Alta_Alumno.a;
-import static proyecto.Alta_Alumno.rp;
-import static proyecto.Alta_Alumno.ruta_txt;
+import static proyecto.Alta_Alumno.List_alumnos;
+import static proyecto.Alta_Alumno.txt_alumnos;
 
 
 public class Cons_Alumno extends javax.swing.JFrame {
@@ -26,7 +26,7 @@ public class Cons_Alumno extends javax.swing.JFrame {
     }
     public int idnt;
    
-    public final String ruta_txt = "mi.txt";
+    public final String txt_alumnos = "Alum.txt";
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -36,7 +36,7 @@ public class Cons_Alumno extends javax.swing.JFrame {
         txtId = new javax.swing.JTextField();
         Bus = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Tabla3 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -70,8 +70,8 @@ public class Cons_Alumno extends javax.swing.JFrame {
         });
         getContentPane().add(Bus, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 16, -1, -1));
 
-        Tabla3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        Tabla3.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -79,8 +79,8 @@ public class Cons_Alumno extends javax.swing.JFrame {
                 "Nombre", "Edad", "Sexo", "Direccion", "Carrera", "Asignatura"
             }
         ));
-        Tabla3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(Tabla3);
+        tabla.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(tabla);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 720, 150));
 
@@ -182,8 +182,8 @@ public class Cons_Alumno extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    public void cargar_txt() {
-        File ruta = new File(ruta_txt);
+     public void cargar_txt() { // VERSION DE ALTA_ALUMNO
+        File ruta = new File(txt_alumnos);
         try {
 
             FileReader fi = new FileReader(ruta);
@@ -200,21 +200,22 @@ public class Cons_Alumno extends javax.swing.JFrame {
                 a.setDireccion(st.nextToken());
                 a.setCarrera(st.nextToken());
                 a.setAsignatura(st.nextToken());
+                a.setAsignatura1(st.nextToken());
                 a.setAsignatura2(st.nextToken());
                 a.setAsignatura3(st.nextToken());
                 a.setAsignatura4(st.nextToken());
                 a.setAsignatura5(st.nextToken());
-                a.setAsignatura6(st.nextToken());
-                rp.agregarRegistro(a);
+                
+                List_alumnos.agregarRegistro(a);
             }
             bu.close();
         } catch (Exception ex) {
             mensaje("Error al cargar archivo: " + ex.getMessage());
             System.out.println(ex.getMessage());
         }
-    }
-    
-    public void listarRegistro() {
+    }  
+
+         public void listarRegistro() {
         DefaultTableModel dt = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -234,34 +235,30 @@ public class Cons_Alumno extends javax.swing.JFrame {
         dt.addColumn("Asignatura 4");
         dt.addColumn("Asignatura 5");
         dt.addColumn("Asignatura 6");
-        //int i = 0;
-        
-        int b = (int) (Integer.parseInt(txtId.getText()));//variable auxiliar que no permite comparar el txtId con los elementos del arreglo
+
         Object fila[] = new Object[dt.getColumnCount()];
-        //for(; i < rp.alumnos.size();i++){
-            if (rp.alumnos.get(b-1).id == b) {
-                a = new Alumno();
-                a = rp.obtenerRegistro(b - 1);
-                fila[0] = a.getId();
-                fila[1] = a.getNombre();
-                fila[2] = a.getEdad();
-                fila[3] = a.getSexo();
-                fila[4] = a.getDireccion();
-                fila[5] = a.getCarrera();
-                fila[6] = a.getAsignatura();
-                fila[7] = a.getAsignatura2();
-                fila[8] = a.getAsignatura3();
-                fila[9] = a.getAsignatura4();
-                fila[10] = a.getAsignatura5();
-                fila[11] = a.getAsignatura6();
-                dt.addRow(fila);
-                Tabla3.setModel(dt);
-                Tabla3.setRowHeight(60);
-            }else{
+        for (int i = 0; i < List_alumnos.cantidadRegistro(); i++) {
+            if(List_alumnos.alumnos.get(i).id == Integer.parseInt(txtId.getText()) )
+            {
                 
-            } 
-        //}
-      
+            a = List_alumnos.obtenerRegistro(i);
+            fila[0] = a.getId();
+            fila[1] = a.getNombre();
+            fila[2] = a.getEdad();
+            fila[3] = a.getSexo();
+            fila[4] = a.getDireccion();
+            fila[5] = a.getCarrera();
+            fila[6] = a.getAsignatura();
+            fila[7] = a.getAsignatura1();
+            fila[8] = a.getAsignatura2();
+            fila[9] = a.getAsignatura3();
+            fila[10] = a.getAsignatura4();
+            fila[11] = a.getAsignatura5();
+            dt.addRow(fila);
+            }
+        }
+        tabla.setModel(dt);
+        tabla.setRowHeight(60);
     }
         
     public void mensaje(String texto) {
@@ -305,7 +302,6 @@ public class Cons_Alumno extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bus;
-    private javax.swing.JTable Tabla3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -316,6 +312,7 @@ public class Cons_Alumno extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabla;
     private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 

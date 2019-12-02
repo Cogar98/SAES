@@ -27,7 +27,7 @@ public final class Alta_Profesor extends javax.swing.JFrame {
     int clic_tabla;
     public static String ruta_txt = "Profes.txt";
     public static Profesor a = new Profesor();
-    public static Opciones rp2 = new Opciones();
+    public static Opciones List_Profesores = new Opciones();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -351,7 +351,7 @@ public final class Alta_Profesor extends javax.swing.JFrame {
                 a.setDireccion(st.nextToken());
                 a.setMateria1(st.nextToken());
                 a.setMateria2(st.nextToken());
-                rp2.agregarRegistro(a);
+                List_Profesores.agregarRegistro(a);
             }
             bu.close();
         } catch (Exception ex) {
@@ -367,8 +367,8 @@ public final class Alta_Profesor extends javax.swing.JFrame {
             fw = new FileWriter(ruta_txt);
             pw = new PrintWriter(fw);
 
-            for (int i = 0; i < rp2.cantidadRegistro(); i++) {
-                a = rp2.obtenerRegistro(i);
+            for (int i = 0; i < List_Profesores.cantidadRegistro(); i++) {
+                a = List_Profesores.obtenerRegistro(i);
                 pw.println(String.valueOf(a.getId() + ", " + a.getNombre() + ", " + a.getEdad() + ", " + a.getSexo() + ", "
                         + a.getDireccion() + ", " + a.getMateria1() + ", " + a.getMateria2()));
             }
@@ -463,9 +463,9 @@ public final class Alta_Profesor extends javax.swing.JFrame {
         dt.addColumn("Materia 2");
         
         Object fila[] = new Object[dt.getColumnCount()];
-        for (int i = 0; i < rp2.cantidadRegistro(); i++) {
+        for (int i = 0; i < List_Profesores.cantidadRegistro(); i++) {
             a = new Profesor();
-            a = rp2.obtenerRegistro(i);
+            a = List_Profesores.obtenerRegistro(i);
             fila[0] = a.getId();
             fila[1] = a.getNombre();
             fila[2] = a.getEdad();
@@ -487,10 +487,10 @@ public final class Alta_Profesor extends javax.swing.JFrame {
                 mensaje("Ingresar Nombre");
             } else {
                 a = new Profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
-                if (rp2.buscaCodigo(a.getId()) != -1) {
+                if (List_Profesores.buscaCodigo(a.getId()) != -1) {
                     mensaje("Este codigo ya existe");
                 } else {
-                    rp2.agregarRegistro(a);
+                    List_Profesores.agregarRegistro(a);
                 }
 
                 grabar_txt();
@@ -509,13 +509,13 @@ public final class Alta_Profesor extends javax.swing.JFrame {
             } else if (leerNombre() == null) {
                 mensaje("Ingresar Nombre");
             } else {
-                int codigo = rp2.buscaCodigo(leerCodigo());
+                int codigo = List_Profesores.buscaCodigo(leerCodigo());
                 a = new Profesor(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerMateria1(), leerMateria2());
 
                 if (codigo == -1) {
-                    rp2.agregarRegistro(a);
+                    List_Profesores.agregarRegistro(a);
                 } else {
-                    rp2.modificarRegistro(codigo, a);
+                    List_Profesores.modificarRegistro(codigo, a);
                 }
 
                 grabar_txt();
@@ -532,13 +532,13 @@ public final class Alta_Profesor extends javax.swing.JFrame {
             if (leerCodigo() == -666) {
                 mensaje("Ingrese codigo entero");
             } else {
-                int codigo = rp2.buscaCodigo(leerCodigo());
+                int codigo = List_Profesores.buscaCodigo(leerCodigo());
                 if (codigo == -1) {
                     mensaje("codigo no existe");
                 } else {
                     int s = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar este producto", "Si/No", 0);
                     if (s == 0) {
-                        rp2.eliminarRegistro(codigo);
+                        List_Profesores.eliminarRegistro(codigo);
 
                         grabar_txt();
                         listarRegistro();

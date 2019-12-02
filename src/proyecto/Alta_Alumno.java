@@ -26,9 +26,9 @@ public class Alta_Alumno extends javax.swing.JFrame {
     }
     
     int clic_tabla;
-    public static final String ruta_txt = "Alum.txt";
+    public static final String txt_alumnos = "Alum.txt";
     public static Alumno a = new Alumno();
-    public static Herramientas rp = new Herramientas();
+    public static Herramientas List_alumnos = new Herramientas();
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -430,7 +430,7 @@ public class Alta_Alumno extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 //metodo que carga la informacion del txt
     public void cargar_txt() {
-        File ruta = new File(ruta_txt);
+        File ruta = new File(txt_alumnos);
         try {
 
             FileReader fi = new FileReader(ruta);
@@ -447,13 +447,13 @@ public class Alta_Alumno extends javax.swing.JFrame {
                 a.setDireccion(st.nextToken());
                 a.setCarrera(st.nextToken());
                 a.setAsignatura(st.nextToken());
+                a.setAsignatura1(st.nextToken());
                 a.setAsignatura2(st.nextToken());
                 a.setAsignatura3(st.nextToken());
                 a.setAsignatura4(st.nextToken());
                 a.setAsignatura5(st.nextToken());
-                a.setAsignatura6(st.nextToken());
                 
-                rp.agregarRegistro(a);
+                List_alumnos.agregarRegistro(a);
             }
             bu.close();
         } catch (Exception ex) {
@@ -465,14 +465,14 @@ public class Alta_Alumno extends javax.swing.JFrame {
         FileWriter fw;
         PrintWriter pw;
         try {
-            fw = new FileWriter(ruta_txt);
+            fw = new FileWriter(txt_alumnos);
             pw = new PrintWriter(fw);
 
-            for (int i = 0; i < rp.cantidadRegistro(); i++) {
-                a = rp.obtenerRegistro(i);
+            for (int i = 0; i < List_alumnos.cantidadRegistro(); i++) {
+                a = List_alumnos.obtenerRegistro(i);
                 pw.println(String.valueOf(a.getId() + ", " + a.getNombre() + ", " + a.getEdad() + ", " + a.getSexo() + ", "
-                + a.getDireccion() + ", " + a.getCarrera() + ", " + a.getAsignatura())+ ", " + a.getAsignatura2() + ", "
-                + a.getAsignatura3() + ", " + a.getAsignatura4() + ", " + a.getAsignatura5() + ", " + a.getAsignatura6());
+                + a.getDireccion() + ", " + a.getCarrera() + ", " + a.getAsignatura())+ ", " + a.getAsignatura1() + ", "
+                + a.getAsignatura2() + ", " + a.getAsignatura3() + ", " + a.getAsignatura4() + ", " + a.getAsignatura5());
             }
             pw.close();
 
@@ -617,8 +617,8 @@ public class Alta_Alumno extends javax.swing.JFrame {
         dt.addColumn("Asignatura 6");
 
         Object fila[] = new Object[dt.getColumnCount()];
-        for (int i = 0; i < rp.cantidadRegistro(); i++) {
-            a = rp.obtenerRegistro(i);
+        for (int i = 0; i < List_alumnos.cantidadRegistro(); i++) {
+            a = List_alumnos.obtenerRegistro(i);
             fila[0] = a.getId();
             fila[1] = a.getNombre();
             fila[2] = a.getEdad();
@@ -626,11 +626,11 @@ public class Alta_Alumno extends javax.swing.JFrame {
             fila[4] = a.getDireccion();
             fila[5] = a.getCarrera();
             fila[6] = a.getAsignatura();
-            fila[7] = a.getAsignatura2();
-            fila[8] = a.getAsignatura3();
-            fila[9] = a.getAsignatura4();
-            fila[10] = a.getAsignatura5();
-            fila[11] = a.getAsignatura6();
+            fila[7] = a.getAsignatura1();
+            fila[8] = a.getAsignatura2();
+            fila[9] = a.getAsignatura3();
+            fila[10] = a.getAsignatura4();
+            fila[11] = a.getAsignatura5();
             dt.addRow(fila);
         }
         tabla.setModel(dt);
@@ -647,10 +647,10 @@ public class Alta_Alumno extends javax.swing.JFrame {
             } else {
                 a = new Alumno(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerCarrera(), leerAsignatura()
                 , leerAsignatura2(), leerAsignatura3(), leerAsignatura4(), leerAsignatura5(), leerAsignatura6());
-                if (rp.buscaCodigo(a.getId()) != -1) {
+                if (List_alumnos.buscaCodigo(a.getId()) != -1) {
                     mensaje("Este codigo ya existe");
                 } else {
-                    rp.agregarRegistro(a);
+                    List_alumnos.agregarRegistro(a);
                 }
 
                 grabar_txt();
@@ -669,14 +669,14 @@ public class Alta_Alumno extends javax.swing.JFrame {
             } else if (leerNombre() == null) {
                 mensaje("Ingresar Nombre");
             } else {
-                int codigo = rp.buscaCodigo(leerCodigo());
+                int codigo = List_alumnos.buscaCodigo(leerCodigo());
                 a = new Alumno(leerCodigo(), leerNombre(), leerEdad(), leerSexo(), leerDireccion(), leerCarrera(), leerAsignatura()
                 , leerAsignatura2(), leerAsignatura3(), leerAsignatura4(), leerAsignatura5(), leerAsignatura6());
 
                 if (codigo == -1) {
-                    rp.agregarRegistro(a);
+                    List_alumnos.agregarRegistro(a);
                 } else {
-                    rp.modificarRegistro(codigo, a);
+                    List_alumnos.modificarRegistro(codigo, a);
                 }
 
                 grabar_txt();
@@ -693,13 +693,13 @@ public class Alta_Alumno extends javax.swing.JFrame {
             if (leerCodigo() == -666) {
                 mensaje("Ingrese codigo entero");
             } else {
-                int codigo = rp.buscaCodigo(leerCodigo());
+                int codigo = List_alumnos.buscaCodigo(leerCodigo());
                 if (codigo == -1) {
                     mensaje("codigo no existe");
                 } else {
                     int s = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar este producto", "Si/No", 0);
                     if (s == 0) {
-                        rp.eliminarRegistro(codigo);
+                        List_alumnos.eliminarRegistro(codigo);
 
                         grabar_txt();
                         listarRegistro();

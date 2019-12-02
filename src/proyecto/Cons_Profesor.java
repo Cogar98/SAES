@@ -12,8 +12,10 @@ import javax.swing.table.DefaultTableModel;
 //import static proyecto.altaAlumnos.a;
 //import static proyecto.altaAlumnos.rp;
 import static proyecto.Alta_Profesor.a;
-import static proyecto.Alta_Profesor.rp2;
 import static proyecto.Alta_Profesor.ruta_txt;
+import static proyecto.Alta_Profesor.List_Profesores;
+
+
 public class Cons_Profesor extends javax.swing.JFrame {
 
     public Cons_Profesor() {
@@ -188,7 +190,7 @@ public class Cons_Profesor extends javax.swing.JFrame {
                 a.setDireccion(st.nextToken());
                 a.setMateria1(st.nextToken());
                 a.setMateria2(st.nextToken());
-                rp2.agregarRegistro(a);
+                List_Profesores.agregarRegistro(a);
             }
             bu.close();
         } catch (Exception ex) {
@@ -197,7 +199,8 @@ public class Cons_Profesor extends javax.swing.JFrame {
         }
     }
     
-        public void listarRegistro() {
+        public void listarRegistro() 
+        {
         DefaultTableModel dt = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -216,10 +219,10 @@ public class Cons_Profesor extends javax.swing.JFrame {
         int b = (int) (Integer.parseInt(txtID.getText()));
 //variable auxiliar que no permite comparar el txtId con los elementos del arreglo
         Object fila[] = new Object[dt.getColumnCount()];
-        //for(int i = 0; i < rp2.profesores.size(); i++){
-            if( rp2.profesores.get(b-1).id == b){
+        //for(int i = 0; i < List_Profesores.profesores.size(); i++){
+            if( List_Profesores.profesores.get(b-1).id == b){
                 a = new Profesor();
-                a = rp2.obtenerRegistro( b-1);
+                a = List_Profesores.obtenerRegistro( b-1);
                 fila[0] = a.getId();
                 fila[1] = a.getNombre();
                 fila[2] = a.getEdad();
